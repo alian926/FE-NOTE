@@ -1,3 +1,7 @@
+/**
+ * bind无法作用于箭头函数
+ */
+
 Function.prototype.bind2 = function (context) {
 	if (typeof this !== 'function') {
 		throw new Error(

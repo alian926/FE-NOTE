@@ -7,6 +7,7 @@ Function.prototype.call2 = function(context) {
       args.push('arguments[' + i + ']');
   }
   // 这里 args 会自动调用 Array.toString() 这个方法。
+  // 如果字符串表示的是表达式，eval() 会对表达式进行求值。
   let result = eval('context.fn(' + args +')');
   delete context.fn;
   return result;

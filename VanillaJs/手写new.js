@@ -1,3 +1,9 @@
+/**
+ * 一些知识点
+ * instanceof 检测右侧构造函数的prototype是否出现在左侧实例对象的原型链中
+ * 箭头函数 没有自己的this/super/arguments/new.target,不能被用作构造函数(箭头函数内部只拥有[[Call]], 没有function函数的[[Construct]])
+ */
+
 function newFactory() {
 
   let obj = new Object(),
