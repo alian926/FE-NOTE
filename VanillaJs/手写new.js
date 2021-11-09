@@ -1,7 +1,17 @@
 /**
  * 一些知识点
  * instanceof 检测右侧构造函数的prototype是否出现在左侧实例对象的原型链中
- * 箭头函数 没有自己的this/super/arguments/new.target,不能被用作构造函数(箭头函数内部只拥有[[Call]], 没有function函数的[[Construct]])
+ * 箭头函数 没有自己的this/super/arguments/new.target,不能被用作构造函数(箭头函数内部只拥有[[Call]], 没有function函数的[[Construct]]),
+ * 
+ * 
+ * var foo = {
+    bar: {
+        baz:() => {
+            console.log(4,this)
+        }
+    }
+}
+foo.bar.baz() this指向window, this的隐式绑定只参考临近的对象,如果是箭头函数声明的,就指向全局了
  */
 
 function newFactory() {
