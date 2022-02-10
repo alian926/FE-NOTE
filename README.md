@@ -288,6 +288,35 @@ UDP是不可靠传输，但基于UDP的QUIC协议可以实现类似TCP的可靠�
 
 
 
+# JavaScript
+
+## 1. js数据类型、typeof、instanceof的作用？
+
+1. string, number, boolean, null, undefined, object, symbol, BigInt
+2. typeof 主要用来判断类型数据，返回值有string,boolean,number,function,object,undefined,symbol
+3. instanceof 判断对象是哪个构造函数的实例
+
+## 2. 什么是闭包？
+
+闭包是指有权访问另一个函数作用域中的变量的函数——《JavaScript高级程序设计》
+
+当函数可以记住并访问所在的词法作用域时，就产生了闭包，及时函数是在当前词法作用域之外执行——《你不知道的JavaScript》
+
+闭包作用：
+
+* 能够访问函数定义时所在的词法作用域（阻止其被回收）
+* 私有化变量
+* 模拟块级作用域
+* 创建模块
+
+闭包缺点：会导致函数的变量一直保存在内存中，不合理的使用闭包可能会导致内存泄漏
+
+## 3.原型，原型链是什么？
+
+原型： 对象中固有的`__proto__`属性，该属性指向对象构造函数的prototype属性。
+
+原型链： 当我们访问一个对象的属性时，如果这个对象内部不存在这个属性，那么它就会去它的原型对象里找这个属性。
+
 
 
 
