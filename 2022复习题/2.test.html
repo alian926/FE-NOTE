@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text" />
+    <script>
+
+        document.getElementById("text").onkeypress = function(e){
+            console.log(
+                '%c 2022-03-24, 14-info: this',
+                'color: fuchsia; background: Aquamarine; font-size: 20px;',
+                this,
+                this.keyCode
+            ); 
+            console.log(
+                '%c 2022-03-24, 19-info: event',
+                'color: fuchsia; background: Aquamarine; font-size: 20px;',
+                e
+            ); 
+            console.log(
+                '%c 2022-03-24, 24-info: window.event',
+                'color: fuchsia; background: Aquamarine; font-size: 20px;',
+                window.event
+            ); 
+        }
+    </script>
+</body>
+</html>
