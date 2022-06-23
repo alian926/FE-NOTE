@@ -1,6 +1,6 @@
 // 第二版
-Function.prototype.call2 = function(context) {
-  let context = context || window;
+Function.prototype.call2 = function(ctx) {
+  let context = ctx || window;
   context.fn = this;
   let args = [];
   for(let i = 1, len = arguments.length; i < len; i++) {

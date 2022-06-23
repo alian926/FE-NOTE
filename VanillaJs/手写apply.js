@@ -1,5 +1,5 @@
-Function.prototype.apply2 = function (context, arr) {
-  let context = Object(context) || window;
+Function.prototype.apply2 = function (ctx, arr) {
+  let context = Object(ctx) || window;
   context.fn = this;
 
   let result;
@@ -9,9 +9,9 @@ Function.prototype.apply2 = function (context, arr) {
   else {
       let args = [];
       for (let i = 0, len = arr.length; i < len; i++) {
-          args.push('arr[' + i + ']');
+          args.push(`arr[${i}]`);
       }
-      result = eval('context.fn(' + args + ')')
+      result = eval(`context.fn(${args})`)
   }
 
   delete context.fn

@@ -113,6 +113,20 @@ Promise.prototype.catch = function (onRejected) {
     return this.then(null, onRejected);
 };
 
+// finally原型方法
+Promise.prototype.finally = function (fn) {
+    return this.then(
+        value => {
+            return Promise.resolve(fn()).then(() => value);
+        },
+        error => {
+            return Promise.resolve(fn()).then(() => {
+                throw error;
+            });
+        }
+    );
+};
+
 // resolve方法
 Promise.resolve = function (val) {
     // 直接抛出一个成功状态的Promise
@@ -238,3 +252,4 @@ Promise.all([p1, p2]).then(
 // });
 
 // Promise.resolve(1).then(val => console.log('then2 :', val));
+
